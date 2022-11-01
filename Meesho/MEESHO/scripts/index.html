@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <title>
+      Online Sopping Site For Fastion,Electronic, Home&More | Meesho |
+      meesho.com
+    </title>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/popupHover.css" />
+    <link rel="stylesheet" href="css/navbar2.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/shopping.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    
+    <style>
+      
+      #contents {
+       width: 70vw;
+       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       margin: auto;
+     }
+      #content{
+       width: 90vw;
+       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       margin: auto;
+       margin-bottom: 4rem;
+
+     }
+
+      
+
+
+
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div id="navbar"></div>
+
+    <!-- navbarSecond -->
+    <div id="navbarSecond"></div>
+
+    <!-- body of cntent -->
+    <div id="content"></div>
+
+    <div id="contents">
+        <h2>Products For You</h2>
+       <div id="ShoppingItems">
+        <!-- <div class="card">
+
+                <div class="itemImg">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg" alt="">
+                </div>
+
+                <div class="itemDetail">
+                    <p>Men Cotton Pure Cotton</p>
+                    <p class="itemPrice">
+                    <span>&#8377 549</span>
+                    <span> &#8377 1799</span>
+                    <span>30% off</span>
+                    </p>
+                    <p><i class="bi bi-xbox" style="color: green;">  </i>discount on 1st Order</p>
+                    <p class="delivrey"> Free delivery</p>
+                    <span class="rating">3.8<i class="bi bi-star-fill"></i></span><span>30 review</span>
+                </div>
+
+            </div>
+           -->
+      </div>
+</div>
+
+    <!-- footer part -->
+    <div id="footer"></div>
+
+  </body>
+</html>
+<script src="./shoppingData.js"></script>
+<script src="./data.js"></script>
+<script type="module">
+  import navbar from "./components/navbar.js";
+  import navbarSecond from "./components/navbar2.js";
+  import footer from "./components/footer.js";
+  import content from "./components/content.js";
+
+
+
+  document.getElementById("navbar").innerHTML = navbar();
+  document.getElementById("navbarSecond").innerHTML = navbarSecond();
+  document.getElementById("footer").innerHTML = footer();
+
+  document.getElementById("content").innerHTML = content();
+
+
+  //getting data fro local storage
+  let data = JSON.parse(localStorage.getItem("data"))
+console.log(data)
+  document.getElementById("InputNavbar").addEventListener("keypress",search) ;
+
+
+  function search(e){
+    var arr = []
+    if(e.key=="Enter"){
+      var x = document.getElementById("InputNavbar").value
+
+        data.map(function(ele){
+          var y = ele.name;
+           var lowercaseOfName =y.toLowerCase()
+           var url = ele.image_url.toLowerCase()
+          
+          if(y==null){
+            console.log("hello")
+          }
+
+          if(y.includes(x) || lowercaseOfName.includes(x) || url.includes(x) || ele.image_url.includes(x)){
+            arr.push(ele)
+            localStorage.setItem("arr" , JSON.stringify(arr))
+
+            console.log(ele)
+          }
+    })
+    let match = JSON.parse(localStorage.getItem("arr"))
+
+      if(match[0].name.includes(x) || match[0].name.toLowerCase().includes(x) || match[0].image_url.includes(x) || match[0].toLowerCase().image_url.includes(x)){
+        
+        location.href = "SearchShow.html"
+      }else{
+        alert("Search Not Found Try Again")
+      }
+
+    }
+}
+
+</script>
+

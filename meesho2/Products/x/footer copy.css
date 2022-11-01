@@ -1,0 +1,75 @@
+
+      #footer{
+
+          width: 100vw;
+          height: auto;
+          background-color: whitesmoke;
+      }
+      #x{
+        background-color: whitesmoke;
+        /* margin-top: 1rem; */
+      }
+
+      #footerContact{
+          display: flex;
+          /* justify-content: space-around; */
+          /* align-items: center; */
+          margin: auto;
+          width:  98vw;
+          height: 50vh;
+          border-bottom: 1px solid rgb(214, 204, 204);
+
+          background-color: whitesmoke;
+          padding-bottom: 3rem;
+          margin : 2rem 0;
+      }
+      #playGoogleStore{
+          width: 33%;
+          /* border: 1px solid red; */
+          text-align: left;
+          padding: 2rem;
+      }
+      
+      #playGoogleStore>div{
+        display: flex;
+      }
+      #playGoogleStore>div>img{
+        width: 180px;
+        height: 70px;
+        margin-right: .5rem;
+        cursor: pointer;
+      }
+      #careers ,#policy,#socialMedia{
+        /* border: 1px solid red; */
+        width: 15%;
+        /* border: 1px solid red; */
+        height: 60%;
+        font-weight: bolder;
+        font-size: 16px;
+        padding-top: 2rem;
+        color: rgb(153, 146, 146);
+        cursor: pointer;
+      }
+      #socialMedia>i{
+        font-size: 25px;
+        margin-right: .5rem;
+      }
+      #contact{
+        width: 22%;
+        /* border: 1px solid blue; */
+        font-size: 12px;
+        line-height: .8rem;
+        padding-top: 2rem;
+        word-wrap: break-word;
+      }
+
+      /* 2nd footer */
+      #footerSecond{
+        width: 90vw;
+        margin: auto;
+      }
+      #query{
+        width: inherit;
+        height: 50px;
+        background-color: whitesmoke;
+      }
