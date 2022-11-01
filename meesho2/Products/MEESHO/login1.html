@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:lavenderblush;
+            padding-top: 30px;
+
+        }
+        #container{
+            height: 90%;
+            width: 27%;
+            /* border: 1px solid black; */
+            /* padding-left: 40%; */
+            /* border-radius:5px; */
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            background-color:white;
+            /* padding-top: 30px; */
+
+        }
+        #div1{
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+        #div1 img{
+            width: 100%;
+            height: 250px;
+            border-radius: 5px;
+        }
+        #div2{
+            /* padding-left: 10px; */
+            width: 100%;
+            /* text-align: center; */
+            padding-left:30px;
+        }
+        #div3{
+            display: flex;
+            gap: 50px;
+            padding-left: 30px;
+        }
+        #div3 .phone{
+            color:rgb(247, 123, 144);
+        }
+        #div4{
+            display: flex;
+            gap: 50px;
+            padding-left: 30px;
+            
+        }
+      
+        #div4 p{
+            
+            /* border-bottom: 1px; */
+            border-bottom: 1px solid black;
+        }
+
+        #div4 input,#div7 input{
+            width: 53%;
+            border-top: 1px;
+            border-left: 1px;
+            border-right: 1px;
+        }
+        #div5{
+            padding-left: 30px;
+            padding-top: 35px;
+           
+        }
+        #div5 input{
+            width: 80%;
+            height:40px;
+            background-color: rgba(243, 17, 205, 0.801);
+            border:none;
+            color:aliceblue;
+            font-size:25px;
+            border-radius: 5px;
+            
+        }
+
+        #div6{
+            padding-top: 30%;
+            /* padding-left: 30px; */
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        #div6 p:last-child{
+            color: rgb(206, 98, 116);
+        }
+
+        #div7{
+            padding-top: 10%;
+            padding-left: 30px;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+
+        <div id="container">
+
+            <div id="div1">
+                <img src="adv.jpg" alt="image">
+            </div>
+    
+            <div id="div2">
+                <h2>Enter Your correct details</h2>
+            </div>
+    
+            <!-- <div id="div3">
+               
+                <p class="phone">Change Number</p>
+            </div> -->
+             
+            <form id="form">
+
+
+                <div id="div4">
+                   <input id="email" type="text" placeholder="Enter email">
+                </div>
+    
+                <div id="div7">
+                    <input id="pass" type="password" placeholder="Enter password">
+                </div>
+    
+                <div id="div5">
+                    <!-- <button class="otp">Verify</button> -->
+                    <input type="submit" value="Login" placeholder="Verify">
+    
+                </div>
+            </form>
+            
+           
+            <div id="div6">
+                <p>By continuing, you agree to Meesho’s </p>
+                <p>Terms & Conditions  
+                    and  
+                    Privacy Policy</p>
+            </div>
+    
+        </div>
+
+    </div>
+   
+</body>
+</html>
+<script src="./scripts/login1.js">
+
+</script>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta cha₹et="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+
+  <link rel="stylesheet" href="./x/navbar.css" />
+    <link rel="stylesheet" href="./x/popupHover.css" />
+    <link rel="stylesheet" href="./x/navbar2.css" />
+    <link rel="stylesheet" href="./x/footer.css" />
+
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 22%)  ;
+        gap: 20px;
+        margin-left: 10%;
+      }
+      #maindiv {
+        border: 1px solid rgb(238, 230, 230);
+        border-radius: 5px;
+      }
+      #menImg {
+        width: 100%;
+        height: 300px;
+        border-radius: 5px;
+      }
+      #name {
+        margin-left: 10px;
+        margin-bottom: -10px;
+        color: #6d6a70;
+      }
+      #priceDiv {
+        display: flex;
+        gap: 5px;
+        margin-left: 10px;
+        margin-bottom: -25px;
+      }
+
+      #price {
+        font-size: 19px;
+        font-weight: 700;
+      }
+
+      #strikepri {
+        padding-top: 8px;
+        padding-left: 2px;
+        color: #6d6a70;
+      }
+      #discount {
+        padding-left: 10px;
+        color: #716e75;
+      }
+
+      #delivery {
+        width: 100px;
+        height: 25px;
+        border: 1px solid rgb(180, 168, 168);
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        color: #716e75;
+        font-size: 14px;
+      }
+      #ratdiv {
+        display: flex;
+        gap: 5px;
+      }
+
+      #rating {
+        width: 40px;
+        height: 25px;
+        /* border: 1px solid black; */
+        border-radius: 20px;
+        padding-left: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background-color: #23bb75;
+        color: aliceblue;
+      }
+
+      #review {
+        margin-top: 10px;
+        color: #716e75;
+      }
+    </style>
+  </head>
+  <body>
+
+      <!-- navbar -->
+   <div id="navbar"></div>
+
+   <!-- navbarSecond -->
+   <div id="navbarSecond"></div>
+
+    <h1 style="margin-left: 125px">Womens clothing</h1>
+    <!-- <p id="icon">&#8377</p> -->
+    <div id="container"></div>
+    <div id="footer"></div>
+  </body>
+  <script type="module">
+
+    import navbar from "./x/navbar.js";
+    import navbarSecond from "./x/navbar2.js";
+    import footer from "./x/footer.js";
+
+  document.getElementById("navbar").innerHTML = navbar();
+  document.getElementById("navbarSecond").innerHTML = navbarSecond();
+  document.getElementById("footer").innerHTML = footer();
+
+    var MensData = [
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2278228/2018/4/5/11522913267066-DressBerry-Women-Watches-7501522913266942-1.jpg",
+        type: "watch",
+        name: "Women Analouge",
+        brand: "Daniel Klein",
+        price: 989,
+        rating: 3.5,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2030,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12894708/2020/12/3/15de92f0-3a4c-470c-9e1d-b5526f4335171606978803351anaynaWomenNavyBlueWhitePrintedStraightKurta1.jpg",
+        type: "kurta",
+        name: "Printed Straight Kurta",
+        brand: "Biba",
+        price: 383,
+        rating: 3.9,
+        review: "560 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 1230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/18/1ab6d9e3-e5c3-46e6-adc0-6066105b01a81616060924389-1.jpg",
+        type: "dress",
+        name: "Self Design fit and flare Dress",
+        brand: "Libas",
+        price: 1668,
+        rating: 4.1,
+        review: "3459 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 930,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11056154/2019/12/5/30b0017d-7e72-4d40-9633-ef78d01719741575541717470-AHIKA-Women-Black--Green-Printed-Straight-Kurta-990157554171-1.jpg",
+        type: "kurta",
+        name: "Printed Straight Kurta",
+        brand: "Biba",
+        price: 526,
+        rating: 4.7,
+        review: "1117 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 890,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11629088/2020/4/7/eadecde2-3d27-46a3-8d44-3a67048317391586236305698-Lakme-Eyeconic-Kajal---Deep-Black-035-g-51586236305566-1.jpg",
+        type: "makeup",
+        name: "Eyeconic kajal-Deep Black",
+        brand: "Lakme",
+        price: 148,
+        rating: 5.0,
+        review: "9001 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 223,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13764318/2021/4/7/c6a16eb7-833d-4df2-8e0e-cb694a8a83e51617792817180-Varanga-Peach-Bandhani-Printed-Embroidered-Kurta-69516177928-1.jpg ",
+        type: "kurta",
+        name: "Women Printed Cotton Kurta",
+        brand: "Libas",
+        price: 699,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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",
+        type: "electonics",
+        name: "HP8302 selfie Straightner",
+        brand: "Philips",
+        price: 2152,
+        rating: 3.0,
+        review: "645 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13902678/2021/4/6/a5dfcb9a-af2a-4ed8-98bf-e10a8b3b5a891617704827106-Anouk-Women-Kurta-Sets-911617704825967-1.jpg",
+        type: "kurta",
+        name: "Yoke Design Kurta with Trouser",
+        brand: "Biba",
+        price: 1025,
+        rating: 3.1,
+        review: "3612 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2630,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15816476/2021/11/13/5d433091-6cdd-4d5b-831e-e3d08c9acdc71636795731219-Fabindia-Women-Kurtas-6861636795730664-1.jpg",
+        type: "kurta",
+        name: "Women Cotton Yoke Design Kurta",
+        brand: "Libas",
+        price: 2799,
+        rating: 4.3,
+        review: "5006 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13000414/2020/12/3/4b6ac67e-3089-450c-83e4-f0362b930af91606971728255-SASSAFRAS-Women-Jeans-7971606971722019-1.jpg",
+        type: "jeans",
+        name: "Women Jogger Jeans",
+        brand: "Libas",
+        price: 799,
+        rating: 1.3,
+        review: "1200 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 1130,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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",
+        type: "kurta",
+        name: "Chanderi Yoke Design Kurta Set",
+        brand: "Kalini",
+        price: 1979,
+        rating: 3.4,
+        review: "3045 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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",
+        type: "Kurta",
+        name: "Floral",
+        brand: "Biba",
+        price: 1229,
+        rating: 3.1,
+        review: "3245 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11056866/2019/12/9/67a0d919-cbca-4d89-a8f1-6a25c9e9305c1575891613300-Round-NeckWith--34th-Sleeve-Straight-Floral-print-Crepe-Kurt-1.jpg",
+        type: "kurta",
+        name: "Floral Leafy Foil Kurta Set",
+        brand: "Kalini",
+        price: 641,
+        rating: 4.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10356511/2019/8/8/a28f9ccb-c0d7-4e66-87f0-e639f157ff2d1565263388836-Libas-Women-Kurta-Sets-571565263387250-1.jpg",
+        type: "kurta",
+        name: "Ethnic Print Kurta Set",
+        brand: "Libas",
+        price: 911,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15759786/2021/11/10/59caf521-e434-4c8e-81b3-a92b2caac33c1636551823456Fire-BolttNinjaUnisexTouchtoWakeSpO2Smartwatch07BSWAAY-Black3.jpg ",
+        type: "watch",
+        name: "Ninja Toauch To Wake SmartWatch",
+        brand: "Fastrack",
+        price: 1999,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1967182/2018/7/31/f8e75fd5-47f4-4cc6-946d-cc069773cffb1533030162531-Maybelline-Black-Hyper-Curl-Mascara-Waterproof-Mascara-4211533030162488-1.jpg ",
+        type: "makeup",
+        name: "Waterproof Hypercurl Mascara",
+        brand: "Lakme",
+        price: 259,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12384822/2020/9/1/3901ed9b-db0c-4056-817d-a518ac01a0691598947696216KottyWomenBlackWideLegJeans1.jpg",
+        type: "jeans",
+        name: "Women Wide Leg Jeans",
+        brand: "Biba",
+        price: 899,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13508250/2021/1/29/e794a024-ce1b-44cc-8d0c-cf6c6cdef2a31611904160761-Wings-Elevate-Bluetooth-50-Wireless-Earphoens-with-Deep-Bass-1.jpg",
+        type: "electronics",
+        name: "Wireless Earphone",
+        brand: "philips",
+        price: 699,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16947966/2022/1/27/4cbf1e43-79ff-42d4-af54-d7ad7a6ccc391643272377504KALINIWomenMaroonAnarkaliKurta1.jpg",
+        type: "Kurta",
+        name: "Women Ethnic Motifs Printed Kurta",
+        brand: "Libas",
+        price: 999,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/5/e59c4735-e5c0-4c08-8ef5-7c3ce6cee96c1617599157870-1.jpg ",
+        type: "kurta",
+        name: "Stripped Kurta with Palazzos & Duppatta",
+        brand: "Kalini",
+        price: 1259,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/9803279/2019/10/11/8b3247d2-99d4-4448-aa57-9c28905968861570782281063-Apple-White-2nd-Gen-AirPods-with-Charging-Case-MV7N2HNA-1181-1.jpg",
+        type: "electronics",
+        name: "2nd Gen Airpods",
+        brand: "Apple",
+        price: 12909,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15611052/2022/1/5/ad05d825-a52a-4cb3-987e-2ac1cbbf06f81641360672394-NOISE-Unisex-White-Solid-Truly-Wireless-Bluetooth-Earbuds-78-1.jpg",
+        type: "electronics",
+        name: "VS102 Vluetooth Headset",
+        brand: "philips",
+        price: 1299,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13962282/2021/7/5/26f8c8a9-e900-4510-9fb0-ac42f029442c1625483017312-Indo-Era-Beigh-Embroidered-Straight-Kurta-Palazzo-With-Dupat-1.jpg",
+        type: "kurta",
+        name: "Zari Embroidered Kurta Set",
+        brand: "Biba",
+        price: 2099,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17016696/2022/2/2/6cb49c20-ac61-484b-9a3c-88418e7276dc1643798570263OjjasviWomenGreenKeyholeNeckThreadWorkKurta1.jpg",
+        type: "kurta",
+        name: "Women Lace Kurta",
+        brand: "Kalini",
+        price: 1529,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15100148/2021/9/8/10520a94-abdd-4368-bc3b-d31549738f441631106041308-Crocs-Unisex-Sandals-2611631106040997-1.jpg",
+        type: "footwear",
+        name: "Unisex Solid Clogs",
+        brand: "Nike",
+        price: 2271,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8963473/2019/4/9/9bf85f32-6b74-42f2-a538-557b99a69ff71554805174525-Roadster-Women-Blue-Skinny-Fit-Mid-Rise-Low-Distress-Stretch-1.jpg",
+        type: "jeans",
+        name: "Women Skinny Fit Crop Jeans",
+        brand: "Nike",
+        price: 1049,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/19/8cefde46-2375-483d-a248-533cd2752a191608365867542-1.jpg ",
+        type: "kurta",
+        name: "Printed Kurta With Palazzo",
+        brand: "Biba",
+        price: 1298,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11636314/2022/1/25/4d268916-fac2-4111-b421-6912e02018ee1643111632475-Shae-by-SASSAFRAS-Women-Blue--Off-White-Printed-Anarkali-Kur-1.jpg",
+        type: "kurta",
+        name: "Women Printed Anarkali Kurta",
+        brand: "Libas",
+        price: 985,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7030192/2021/11/8/c50a462d-d87e-4059-ae47-a53ed95404291636364709468-NOVA-NHP-8100-Silky-Shine-Hot--Cold-Foldable-Hair-Dryer---Bl-1.jpg",
+        type: "electronics",
+        name: "NHP8100 Silky Shine Hair Dryer",
+        brand: "Apple",
+        price: 447,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12222102/2020/8/13/d47d5955-064d-4d81-a88f-52524d2f299a1597298540090-SASSAFRAS-Women-Black-Regular-Fit-Solid-Wide-Leg-Track-Pants-1.jpg",
+        type: "jeans",
+        name: "Women Regular Wide track Pant",
+        brand: "Nike",
+        price: 689,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1620103/2020/11/17/e534cf64-eb40-495e-a44f-4d6d31cced0c1605623766871-Daniel-Klein-Premium-Women-Silver-Toned-Dial-Watch-DK11138-2-1.jpg",
+        type: "watch",
+        name: "Women Analouge Watch",
+        brand: "Fastrack",
+        price: 2272,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/19/76100d43-6521-498f-8b33-dac92fd4810e1608361677531-1.jpg",
+        type: "kurta",
+        name: "Printed Kurta with Palazzo",
+        brand: "Kalini",
+        price: 1091,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14849936/2021/8/17/c6ceb794-5297-4b14-8fdb-d51f15c6c7541629181586262-Puma-Women-Sports-Shoes-1781629181585827-1.jpg",
+        type: "footwear",
+        name: "Women Platinum Training Shoes",
+        brand: "Puma",
+        price: 2749,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/22/fe00ae67-9715-41af-ade8-3cd75ccaf52d1619074855661-1.jpg",
+        type: "kurta",
+        name: "Women Geometric Printed Kurta",
+        brand: "Libas",
+        price: 598,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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",
+        type: "kurta",
+        name: "Women Printed Kurta Set",
+        brand: "Biba",
+        price: 1039,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10842022/2019/11/6/a373d08e-a2fb-4cbf-9a19-dd9679ea0c181573032453223-Libas-Women-Dresses-7681573032451400-1.jpg",
+        type: "dress",
+        name: "Ethnic Motifs A-Line Dress",
+        brand: "Kalini",
+        price: 1209,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13169116/2021/9/1/f4743cd0-265e-4f57-8273-a5abb52501751630500433313-Libas-Women-Green-Pure-Cotton-Kurta-with-Palazzos--With-Dupa-1.jpg",
+        type: "kurta",
+        name: "Women Kurta with Palazo",
+        brand: "Biba",
+        price: 1349,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14709966/2021/7/10/d2407657-1f04-4d13-9f52-9e134050489b1625905793495-Nayo-Women-Red-Ethnic-Motifs-Printed-Empire-Pure-Cotton-Kurt-1.jpg",
+        type: "kurta",
+        name: "Women Kurta With Trouser",
+        brand: "Libas",
+        price: 1479,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16331376/2021/12/2/b8c4f90f-683c-48d2-b8ac-19891a87c0651638428628378KurtaSets1.jpg ",
+        type: "kurta",
+        name: "Women Embroidered Kurta",
+        brand: "Libas",
+        price: 1619,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2018/12/4/c0fa8606-a244-48e0-a360-401956a9cbba1543924444628-1.jpg ",
+        type: "jeans",
+        name: "Women Skinny Fit Jeans",
+        brand: "Nike",
+        price: 947,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8529019/2019/1/23/5d6a8e02-0fa0-4770-82f5-6b52d9c983561548242338312-Varanga-mustard-printed-straight-kurta-6361548242336928-1.jpg ",
+        type: "kurta",
+        name: "Mustard Marigold Kurta",
+        brand: "Biba",
+        price: 593,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/57677/2020/10/10/90dae682-fcf2-4436-b291-954e3c40af0e1602269668338LotusHerbalsSustainableWhiteglowSkinWhiteningBrighteningCrem1.jpg",
+        type: "makeup",
+        name: "Whiteglow Brightening Creme",
+        brand: "Lakme",
+        price: 292,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
+        type: "dress",
+        name: "Floral Printed A-line Dress",
+        brand: "Libas",
+        price: 781,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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 ",
+        type: "dress",
+        name: "Power Shoulder Tulip Heam Dress",
+        brand: "Libas",
+        price: 859,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          "data:image/jpeg;base64,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",
+        type: "saree",
+        name: "Women Design Banarasi Silk Saree",
+        brand: "Biba",
+        price: 1391,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13903168/2021/4/17/638f7420-e644-462e-a484-d6b87e146ee51618644035247-Anouk-Sea-Green-Pure-Georgette-Printed-Dark-Floral--Daily-We-1.jpg",
+        type: "saree",
+        name: "Floral Printed Saree",
+        brand: "Libas",
+        price: 1479,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+      {
+        image_url:
+          "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16977254/2022/1/29/982e8764-349e-4860-b687-87966c52da211643454490435Heels5.jpg ",
+        type: "Footwear",
+        name: "Solid Block Heel Pumps",
+        brand: "Puma",
+        price: 599,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14333116/2022/1/28/aa9bb6d0-fe83-49fc-8c92-361d782644631643361436805-El-Paso-Women-Black-Solid-Heeled-Boots-5491643361436690-6.jpg",
+        type: "footwear",
+        name: "Women Solid Heeled Boots",
+        brand: "Nike",
+        price: 1099,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+        discount: 68,
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16778286/2022/1/11/fe496462-8f98-417b-a83b-875a8100dbf01641902268510RedTapeWomenWhite1.jpg",
+        type: "footwear",
+        name: "Women Walking Shoes",
+        brand: "Fastrack",
+        price: 1399,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11766710/2021/12/10/5f9a0170-1aa4-47a0-aaf3-e970a29190271639137659402-HRX-by-Hrithik-Roshan-Women-Blue-Woven-Design-Alpha-Training-1.jpg",
+        type: "footwear",
+        name: "Women Alpha Training Shoes",
+        brand: "Puma",
+        price: 2364,
+        rating: 3.3,
+        review: "345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2466435/2020/2/27/0b8e7b6b-f912-4f82-9536-80544b9127631582784256862-Daniel-Klein-Women-Black-Analogue-Watch-DK11421-5-1721582784-1.jpg",
+        type: "watch",
+        name: "Women Analouge Watch",
+        brand: "Fastrack",
+        price: 1500,
+        rating: 3.3,
+        review: "3345 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2230,
+      },
+      {
+        image_url:
+          " https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7225013/2018/9/25/a6a086c2-2279-47b7-bc19-3718df09b30f1537859451804-20Dresses-Women-Navy-Blue-Solid-Maxi-Dress-2401537859451421-1.jpg",
+        type: "dress",
+        name: "V-Neck Maxi Dress",
+        brand: "Libas",
+        price: 1798,
+        rating: 4.8,
+        review: "7891 Reviews",
+        discount: "₹ 478 dicount on 1st order",
+
+        strikedoffprice: 2670,
+      },
+    ];
+    localStorage.setItem("dataMen", JSON.stringify(MensData));
+    var mensArr = JSON.parse(localStorage.getItem("dataMen"));
+
+    let detailsArr = JSON.parse(localStorage.getItem("details")) || [];
+
+    displayData(mensArr);
+
+    function displayData(mensArr) {
+      document.querySelector("#container").innerHTML = "";
+
+      mensArr.map(function (elem) {
+        var maindiv = document.createElement("div");
+        maindiv.setAttribute("id", "maindiv");
+        maindiv.addEventListener("click", function () {
+          detailsFun(elem);
+        });
+
+        var img = document.createElement("img");
+        img.setAttribute("id", "menImg");
+        img.setAttribute("src", elem.image_url);
+
+        var name = document.createElement("h3");
+        name.setAttribute("id", "name");
+        name.innerText = elem.name;
+
+        var priceDiv = document.createElement("div");
+        priceDiv.setAttribute("id", "priceDiv");
+
+        var price = document.createElement("p");
+        price.setAttribute("id", "price");
+        price.innerText = `₹ ${elem.price}`;
+
+        var strikedoffprice = document.createElement("p");
+        strikedoffprice.innerText = elem.strikedoffprice;
+        strikedoffprice.setAttribute("id", "strikepri");
+        strikedoffprice.style.textDecoration = "line-through";
+
+        var discount = document.createElement("p");
+        discount.setAttribute("id", "discount");
+        discount.innerText = elem.discount;
+
+        var delivery = document.createElement("div");
+        delivery.setAttribute("id", "delivery");
+        delivery.innerText = " Free Delivery";
+
+        var ratdiv = document.createElement("div");
+        ratdiv.setAttribute("id", "ratdiv");
+
+        var rating = document.createElement("div");
+        rating.setAttribute("id", "rating");
+        rating.innerText = `${elem.rating}✰`;
+
+        var rev = document.createElement("p");
+        rev.setAttribute("id", "review");
+        rev.innerText = elem.review;
+
+        priceDiv.append(price, strikedoffprice);
+        ratdiv.append(rating, rev);
+
+        maindiv.append(img, name, priceDiv, discount, delivery, ratdiv);
+
+        document.querySelector("#container").append(maindiv);
+      });
+    }
+
+    function detailsFun(elem) {
+      elem.qty = 1;
+      // console.log(elem)
+      // add quant as 1 by default ,while adding to cart
+      detailsArr.push(elem);
+      console.log(detailsArr);
+      localStorage.setItem("details", JSON.stringify(detailsArr));
+      window.location.href = "details.html";
+    }
+  </script>
+</html>
+

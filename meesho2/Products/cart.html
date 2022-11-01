@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        width: 100%;
+        background-color: white;
+
+        height: 65px;
+        top: 0;
+        position: sticky;
+        z-index: 10;
+        margin-top: -6px;
+      }
+      #navBar {
+        display: flex;
+        margin-left: 5%;
+      }
+
+      #meeshoLogo {
+        width: 155px;
+        height: 35px;
+        margin-top: 10px;
+      }
+      #trackerimg {
+        height: 40px;
+      }
+      .hr {
+        color: gray;
+      }
+      .box1 {
+        margin-left: 20%;
+      }
+      .boxText {
+        display: flex;
+      }
+      .varticalLine {
+        width: 1px;
+        background-color: #dfdfdf;
+        height: 20px;
+        margin-top: 24px;
+        margin-left: 10px;
+      }
+      .itemtext1 {
+        margin-left: 10px;
+        color: rgba(128, 128, 128, 0.692);
+      }
+
+      .varticalLine2 {
+        width: 1px;
+        background-color: #dfdfdf;
+        height: 207px;
+        margin-top: 24px;
+        margin-left: 30px;
+      }
+      .bigBox {
+        display: flex;
+      }
+      .price {
+        margin-left: 40px;
+      }
+      .priceDetail {
+        display: flex;
+        margin-top: -20px;
+
+        gap: 100px;
+      }
+      .one2 {
+        width: 165px;
+      }
+      #orderToatl {
+        margin-left: 40px;
+        margin-top: 10px;
+      }
+      .horizontal {
+        width: 320px;
+        background-color: #dfdfdf;
+        height: 1px;
+        margin-top: 24px;
+        margin-left: 30px;
+      }
+      .one3 {
+        width: 306px;
+        height: 31px;
+        background-color: #dfdfdf3a;
+        margin-left: 42px;
+        text-align: center;
+        margin-top: -20px;
+      }
+      .one4 {
+        padding-top: 8px;
+      }
+      .btn1 {
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+      #btn {
+        width: 320px;
+        height: 47px;
+        background-color: #f43397;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+      }
+      .precautionimg {
+        width: 335px;
+        height: 135px;
+        margin-left: 30px;
+      }
+
+      #img {
+        width: 76px;
+        height: 76px;
+        border-radius: 4px;
+        margin-left: 30px;
+        margin-top: 18px;
+      }
+      #divDetail {
+        margin-left: 50px;
+        margin-top: 33px;
+      }
+      #name {
+        margin-top: -15px;
+      }
+      #divpriceandqty {
+        display: flex;
+        gap: 10px;
+      }
+
+      #box {
+        display: flex;
+        width: 374px;
+        height: 111px;
+        border: 1px solid rgb(240, 240, 240);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+      .placeorder {
+        margin-top: 10px;
+        text-decoration: none;
+        color: #dfdfdf;
+      }
+      .oneBig {
+        margin-top: 10px;
+        display: flex;
+        margin-left: 40px;
+
+        margin-left: 280px;
+      }
+      .one1 {
+        width: 18px;
+        height: 18px;
+        border: 1px solid rgb(85, 133, 248);
+        border-radius: 50%;
+        text-align: center;
+        color: rgb(85, 133, 248);
+        margin-left: 0px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .one {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #dfdfdf;
+        border-radius: 50%;
+        text-align: center;
+        color: #dfdfdf;
+        margin-left: 0px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .hr1 {
+        background-color: #dfdfdf;
+        width: 60px;
+        margin-left: 0;
+        height: 1px;
+        margin-top: 9px;
+      }
+      .hr0 {
+        background-color: #dfdfdf;
+        width: 60px;
+        margin-left: 0;
+        height: 1px;
+        margin-top: 9px;
+      }
+      .h50 {
+        margin-top: 0px;
+        text-align: center;
+        margin-left: 0px;
+        font-size: 10px;
+        font-weight: 600;
+        color: black;
+      }
+      .h51 {
+        margin-top: 0px;
+        text-align: center;
+        margin-left: -10px;
+        font-size: 10px;
+        font-weight: 600;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="navBar">
+        <div id="imgNavBar1">
+          <img
+            id="meeshoLogo"
+            src="https://2ballz.in/assets/images/meesho.png"
+            alt=""
+          />
+        </div>
+        <div class="oneBig">
+          <div class="one1">
+            1
+            <h5 class="h50">Cart</h5>
+          </div>
+          <hr class="hr0" />
+          <div class="one">
+            2
+            <h5 class="h51">Address</h5>
+          </div>
+          <hr class="hr1" />
+          <div class="one">
+            3
+            <h5 class="h51">Payment</h5>
+          </div>
+          <hr class="hr1" />
+          <div class="one">
+            4
+            <h5 class="h51">Summary</h5>
+          </div>
+        </div>
+      </div>
+      <hr class="hr" />
+    </nav>
+
+    <div class="container">
+      <div class="bigBox">
+        <div class="box1">
+          <div class="boxText">
+            <div><h3 style="cursor: pointer">Cart</h3></div>
+            <div class="varticalLine"></div>
+            <div class="itemtext1"><h3 id="cartCount1">1 Item</h3></div>
+          </div>
+
+          <div id="cartbox">
+            <div id="cartBoxBig"></div>
+            <div id="cartBoxBig2"><h5 id=" cartBoxBig21"></h5></div>
+          </div>
+        </div>
+        <div class="varticalLine2"></div>
+        <div class="box2">
+          <div class="price">
+            <h3>Price Details</h3>
+            <div class="priceDetail">
+              <div class="one2"><p>Product Charge</p></div>
+              <div><p id="totalPrice">₹267</p></div>
+            </div>
+            <div class="priceDetail">
+              <div class="one2"><p>Delivery Charges ⓘ</p></div>
+              <div><p>+ ₹0</p></div>
+            </div>
+            <div class="priceDetail">
+              <div class="one2"><p>COD Charge</p></div>
+              <div><p>+ ₹0</p></div>
+            </div>
+            <div class="priceDetail">
+              <div class="one2"><p>1st Order Discount ⓘ</p></div>
+              <div><p>-₹100</p></div>
+            </div>
+          </div>
+          <div class="horizontal"></div>
+          <div id="orderToatl">
+            <div class="priceDetail">
+              <div class="one2"><h3>Order Total</h3></div>
+              <div><h3 id="orderPrice">₹148</h3></div>
+            </div>
+          </div>
+          <div class="one3">
+            <h6 class="one4">
+              Clicking on ‘Continue’ will not deduct any money
+            </h6>
+          </div>
+          <div class="btn1">
+            <button id="btn">
+              <a class="placeorder" href="address.html"
+                ><h3 class="placeorder">Continue</h3></a
+              >
+            </button>
+          </div>
+          <div>
+            <img
+              class="precautionimg"
+              src="https://images.meesho.com/images/marketing/1588578650850.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let data = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(data);
+
+    data.map(function (elem) {
+      var div = document.createElement("div");
+      div.setAttribute("id", "box");
+
+      var divImg = document.createElement("div");
+      divImg.setAttribute("id", "imgDiv");
+
+      var imag = document.createElement("img");
+      imag.setAttribute("src", elem.image_url);
+      imag.setAttribute("id", "img");
+
+      divImg.append(imag);
+
+      var divDetail = document.createElement("div");
+      divDetail.setAttribute("id", "divDetail");
+
+      var name = document.createElement("h5");
+      name.innerHTML = elem.name;
+      name.setAttribute("id", "name");
+
+      var price = document.createElement("h6");
+      price.innerHTML = ` Size : ${elem.size}`;
+      price.setAttribute("id", "name");
+
+      var sprice = document.createElement("h6");
+      sprice.innerHTML = `Qty : ${elem.qty}`;
+      sprice.setAttribute("id", "name");
+
+      let divpriceandqty = document.createElement("div");
+      divpriceandqty.append(price, sprice);
+      divpriceandqty.setAttribute("id", "divpriceandqty");
+
+      var detail = document.createElement("h6");
+      detail.innerHTML = `₹ ${elem.price}`;
+      detail.setAttribute("id", "name");
+
+      divDetail.append(name, divpriceandqty, detail);
+      div.append(divImg, divDetail);
+
+      document.querySelector("#cartBoxBig").append(div);
+
+      //   let h5box2 = document.createElement("h5");
+      //   h5box2.innerHTML = "Mohd Monish";
+      //   document.querySelector("#cartBoxBig2").append(h5box2);
+    });
+    var total = data.reduce(function (acc, cv) {
+      return acc + Number(cv.price);
+    }, 0);
+    console.log(total);
+    document.querySelector("#totalPrice").innerHTML = `₹ ${total}`;
+    document.querySelector("#orderPrice").innerHTML = ` ₹ ${total - 100}`;
+    document.querySelector("#cartCount1").innerHTML = ` ${data.length} Item`;
+  </script>
+</html>

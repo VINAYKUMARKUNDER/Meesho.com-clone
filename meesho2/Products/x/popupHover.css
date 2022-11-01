@@ -1,0 +1,60 @@
+
+#signupHover , #playStoreHover{
+    display: none;
+    position: absolute;
+    right: 50px;
+    margin: auto;
+    background-color: #f9f9f9;
+    width: 100vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* z-index: 11111; */
+}
+#playStoreHover{
+right: 300px;
+}
+/* #signupHover */
+#cartHhover:hover #signupHover , #download:hover #playStoreHover{
+    display: block;
+    width: 17vw;
+    height: 16vw;
+    border-radius: 0 0 20px 20px;
+    z-index: 5;
+    /* padding: 1rem; */
+  }
+  #signupHover>div>a ,#playStoreHover>div>a{
+    display: block;
+    margin-bottom: 1rem;
+    /* border: 1px solid black; */
+  }
+  #signupHover>div>a:nth-child(2){
+      font-size: 20px;
+      font-weight: bold;
+      /* background-color: blue; */
+  }
+  #signupHover>div>a:nth-child(3){
+      font-size: 12px;
+      font-weight: bold;
+      /* background-color: blue; */
+  }
+  #signupHover>div>a:nth-child(4){
+      /* font-size: 1px; */
+      font-weight: bold;
+      border: 1px solid black;
+      border-radius: 8px;
+      width: 80%;
+      padding: .5rem 0rem;
+      margin: auto;
+  }
+  #signupHover>div>a>i{
+    margin-right:1rem ;
+    font-size: 30px;
+  }
+  #playStoreHover>div img{
+    width: 80%;
+    border-radius: 5px;
+  }
+  #playStoreHover>div>a:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid red; */
+  }

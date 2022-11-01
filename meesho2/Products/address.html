@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9a9d05d2af.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+    
+</head>
+
+<body>
+    <div class="checkout_cantainer">
+        <!-- navbar start -->
+        <div id="navBar">
+            <div id="imgNavBar1">
+              <img
+                id="meeshoLogo"
+                src="https://2ballz.in/assets/images/meesho.png"
+                alt=""
+              />
+            </div>
+            <div class="oneBig">
+              <div class="one1">
+                <i id="icon" class="fa-regular fa-circle-check"></i>
+                <h5 class="h50">Cart</h5>
+              </div>
+              <hr class="hr0" />
+              <div class="one">
+                2
+                <h5 class="h51">Address</h5>
+              </div>
+              <hr class="hr1" />
+              <div class="one">
+                3
+                <h5 class="h51">Payment</h5>
+              </div>
+              <hr class="hr1" />
+              <div class="one">
+                4
+                <h5 class="h51">Summary</h5>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" />
+        </nav>
+    
+        
+        <!-- navbar end -->
+        <div class="address_container">
+            <div class="address_la_1">
+                <div class="address_la_1_0">
+                    <div class="deliver_address">
+                        <span color="greyBase" class="Text_" font-size="18px" font-weight="demi">Select Delivery
+                            Address</span>
+                        <div class="form_div">
+                            <form class="address_form" id="myform">
+                                <div class="part1">
+                                    <div class="contact">
+                                        <img src="https://banner2.cleanpng.com/20191116/iix/transparent-contacts-icon-telephone-icon-phone-call-icon-5dd020eaca1532.2146046515739210028277.jpg"
+                                            width="20" height="20">
+                                        <h6 class="text_style">contact details</h6>
+                                    </div>
+                                    <div class="name_card">
+                                        <p>Name</p>
+                                        <input type="text" id="name" required>
+                                    </div>
+                                    <div class="number_card">
+                                        <p>Phone Number</p>
+                                        <input type="number" id="phone" maxlength="10" required>
+
+                                    </div>
+                                </div>
+                                <div class="part2">
+                                    <div class="address_edit contact">
+                                        <img src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-location-icon-png-image_4231903.jpg"
+                                            width="20" height="20">
+                                        <h6 class="text_style">Address</h6>
+                                    </div>
+                                    <div class="h_mark">
+                                        <p>House no./Building Name</p>
+                                        <input type="text" id="house_mark" required>
+                                    </div>
+                                    <div class="R_area">
+                                        <p>Road Name/ Area/ Colony</p>
+                                        <input type="text" id="colony" required>
+                                    </div>
+                                    <div class="pin_code">
+                                        <p>Pincode</p>
+                                        <input type="number" id="pincode" required>
+                                    </div>
+                                    <div class="city_state">
+                                        <div class="city_class">
+                                            <p>City</p>
+                                            <input id="city" type="text" required>
+                                        </div>
+                                        <div class="state_class">
+                                            <p>State</p>
+                                            <select id="states">
+                                                <option>    </option>
+                                            </select>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="land_mark">
+                                        <div>
+                                            <p>Nearly Location(optional)</p>
+                                            <input type="text" id="landmark">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="button_prop">
+                                        <a style="text-decoration: none; color: white; margin-top: 15px;" class="placeorder" href="payment.html"><input type="submit" class="submit_button"></a>
+                                    </div>
+                                 
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="box2">
+                     
+                            <div class="price">
+                              <h3>Price Details</h3>
+                              <div class="priceDetail">
+                                <div class="one2"><p>Product Charge</p></div>
+                                <div><p id="totalPrice">₹267</p></div>
+                              </div>
+                              <div class="priceDetail">
+                                <div class="one2"><p>Delivery Charges ⓘ</p></div>
+                                <div><p>+ ₹0</p></div>
+                              </div>
+                              <div class="priceDetail">
+                                <div class="one2"><p>COD Charge</p></div>
+                                <div><p>+ ₹0</p></div>
+                              </div>
+                              <div class="priceDetail">
+                                <div class="one2"><p>1st Order Discount ⓘ</p></div>
+                                <div><p>-₹100</p></div>
+                              </div>
+                            </div>
+                            <div class="horizontal"></div>
+                            <div id="orderToatl">
+                              <div class="priceDetail">
+                                <div class="one2"><h3>Order Total</h3></div>
+                                <div><h3 id="orderPrice">₹148</h3></div>
+                              </div>
+                            </div>
+                        
+                           
+                            <div>
+                              <img
+                                class="precautionimg"
+                                src="https://images.meesho.com/images/marketing/1588578650850.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                 
+                </div>
+            </div>
+        </div>
+   
+</body>
+<script >
+     let data = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(data);
+
+    var total = data.reduce(function (acc, cv) {
+      return acc + Number(cv.price);
+    }, 0);
+    console.log(total);
+    document.querySelector("#totalPrice").innerHTML = `₹ ${total}`;
+    document.querySelector("#orderPrice").innerHTML = ` ₹ ${total - 100}`;
+
+    var array=[];
+var array2=[];
+var obj={}
+var state=["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar ","Chhattisgarh"
+,"Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand"
+,"Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram",
+"Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura",
+"Uttar Pradesh","Uttarakhand","West Bengal"];
+var set=document.getElementById("states");
+for (let index = 0; index <state.length; index++) {
+    
+    var opt=document.createElement("option");
+    opt.innerText=state[index];
+    opt.style.width="100%";
+    set.append(opt);
+    
+}
+document.getElementById("myform").addEventListener("submit",sendData);
+function sendData(event)
+{ event.preventDefault();
+    
+   
+    for (let index = 0; index < 8; index++) {
+        const element = document.getElementById("myform")[index].value;
+        array.push(element);
+    }
+    array2.push(array);
+    localStorage.setItem("address",JSON.stringify(array2)); 
+    console.log(array2);
+    window.open('payment.html','_self')
+}
+</script>
+</html>
